@@ -1,0 +1,8 @@
+﻿2017/06/27 14:17:16 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "G:\program\プログラムワークショップ3\プログラムワークショップ３\kadai\kadai2\kadai2\kadai2.vcxproj" (build ターゲット)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Platforms\x64\Microsoft.Cpp.x64.Targets(514,5): error MSB8008: 指定したプラットフォーム ツールセット (v140) はインストールされていないか無効です。サポートされている PlatformToolset 値が選択されていることを確認してください。
+     1>プロジェクト "G:\program\プログラムワークショップ3\プログラムワークショップ３\kadai\kadai2\kadai2\kadai2.vcxproj" (build ターゲット) のビルドが終了しました -- 失敗。
+
+ビルドに失敗しました。
+
+経過時間 00:00:00.25
