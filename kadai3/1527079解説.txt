@@ -1,0 +1,36 @@
+SquareType列挙体
+・Start…スタート地点
+・Goal…ゴール地点
+・Back…1マス戻る
+・Forward…1マス進む
+・Pass…1回休み
+・Normal…何もないマス
+
+CSugorokuDll(int squareMax)（コンストラクタ）
+・各種変数を初期化。
+・squareMaxでSquareType列挙体のsquaresをsquareMax分の配列として確保
+・後述のsquaresInitializeメソッドで配列squaresを初期化
+
+~CSugorokuDll()（デストラクタ）
+・squaresの開放処理
+
+void squaresInitialize()
+・メルセンヌ・ツイスタの乱数を使いsquaresをBack・Forward・Pass・Normalのいずれかを入れる。
+・squares[0]とsquares[squareMax-1]にそれぞれStart・Goalを入れる。
+
+bool update()
+・show()→squareEffect()→ゴールしていればもう一度show()してループ終了→ゴールしていなければrollDice()
+・各種メソッドは後述
+
+void show()
+・マスとプレイヤーの現在地の表示
+・振ったサイコロの目を表示
+
+void rollDice()
+・メルセンヌ・ツイスタの乱数を使いサイコロを振る。
+・サイコロを振ったら、totalRoll（振った回数）に１プラスする
+・現在が一回休みではなかったら、プレイヤーの現在地にプラスする。
+
+void squareEffect()
+・止まったマスごとの効果適用
+・プレイヤーの現在地がゴールを超えていたらisGoolのフラグをtrueにする。
