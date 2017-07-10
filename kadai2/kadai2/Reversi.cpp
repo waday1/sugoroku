@@ -45,56 +45,56 @@ void Reversi::show()
 {
 	setColor(COL_WHITE, COL_GREEN);
 
-	cout << "„¬„ª„±„ª„±„ª„±„ª„±„ª„±„ª„±„ª„±„ª„±„ª„­\n";
-	cout << "„«@";
+	cout << "â€žÂ¬â€žÂªâ€žÂ±â€žÂªâ€žÂ±â€žÂªâ€žÂ±â€žÂªâ€žÂ±â€žÂªâ€žÂ±â€žÂªâ€žÂ±â€žÂªâ€žÂ±â€žÂªâ€žÂ±â€žÂªâ€žÂ­\n";
+	cout << "â€žÂ«Â@";
 	for (int i = 0; i < sizeof(stone) / sizeof(stone[0]); i++)
 	{
 		setColor(COL_WHITE, COL_GREEN);
-		cout << "„« ";
+		cout << "â€žÂ« ";
 		setColor(COL_BLACK, COL_GREEN);
 		cout << i + 1;
 	}
 	setColor(COL_WHITE, COL_GREEN);
-	cout << "„«\n";
-	cout << "„°„ª„´„ª„´„ª„´„ª„´„ª„´„ª„´„ª„´„ª„´„ª„²\n";
+	cout << "â€žÂ«\n";
+	cout << "â€žÂ°â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ²\n";
 	for (int i = 0; i < sizeof(stone) / sizeof(stone[0]); i++)
 	{
 		setColor(COL_WHITE, COL_GREEN);
-		cout << "„« ";
+		cout << "â€žÂ« ";
 		setColor(COL_BLACK, COL_GREEN);
 		cout << i + 1;
 		for (int j = 0; j < sizeof(stone[0]) / sizeof(stone[0][0]); j++)
 		{
 			setColor(COL_WHITE, COL_GREEN);
-			cout << "„«";
+			cout << "â€žÂ«";
 			if (stone[i][j] == Stone::Black)
 			{
 				setColor(COL_BLACK, COL_GREEN);
-				cout << "œ";
+				cout << "ÂÅ“";
 				setColor(COL_WHITE, COL_GREEN);
 			}
 			else if (stone[i][j] == Stone::White)
 			{
 				setColor(COL_WHITE, COL_GREEN);
-				cout << "œ";
+				cout << "ÂÅ“";
 			}
 			else
 			{
-				cout << "@";
+				cout << "Â@";
 			}
 		}
 
-		cout << "„«";
+		cout << "â€žÂ«";
 		cout << "\n";
 		if (i == (sizeof(stone) / sizeof(stone[0])) - 1)
 		{
 			setColor(COL_WHITE, COL_GREEN);
-			cout << "„¯„ª„³„ª„³„ª„³„ª„³„ª„³„ª„³„ª„³„ª„³„ª„®\n";
+			cout << "â€žÂ¯â€žÂªâ€žÂ³â€žÂªâ€žÂ³â€žÂªâ€žÂ³â€žÂªâ€žÂ³â€žÂªâ€žÂ³â€žÂªâ€žÂ³â€žÂªâ€žÂ³â€žÂªâ€žÂ³â€žÂªâ€žÂ®\n";
 		}
 		else
 		{
 			setColor(COL_WHITE, COL_GREEN);
-			cout << "„°„ª„´„ª„´„ª„´„ª„´„ª„´„ª„´„ª„´„ª„´„ª„²\n";
+			cout << "â€žÂ°â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ´â€žÂªâ€žÂ²\n";
 		}
 	}
 	setColor(COL_WHITE, COL_BLACK);
@@ -116,8 +116,9 @@ bool Reversi::isSetCheck(int x, int y, Stone stoneColor)
 	int count = 0;
 	int i = 0, j = 0;
 
-	//¶ã
+	//ÂÂ¶ÂÃ£
 	j = y - 1;
+	//ã“ã“ã‹ã‚‰//
 	for (int i = x - 1; i >= 0; i--)
 	{
 		if (j < 0 || stone[i][j] == Stone::None)
@@ -143,7 +144,8 @@ bool Reversi::isSetCheck(int x, int y, Stone stoneColor)
 		count++;
 		j--;
 	}
-	//ã
+	//ã“ã“ã¾ã§é–¢æ•°åŒ–ã™ã‚‹ã¨çŸ­ããªã‚‹//
+	//ÂÃ£
 	for (int i = x - 1; i >= 0; i--)
 	{
 		if (stone[i][y] == Stone::None)
@@ -168,7 +170,7 @@ bool Reversi::isSetCheck(int x, int y, Stone stoneColor)
 		}
 		count++;
 	}
-	//‰Eã
+	//â€°EÂÃ£
 	j = y + 1;
 	for (int i = x - 1; i >= 0; i--)
 	{
@@ -196,7 +198,7 @@ bool Reversi::isSetCheck(int x, int y, Stone stoneColor)
 		j++;
 	}
 
-	//¶
+	//ÂÂ¶
 	for (int j = y - 1; j >= 0; j--)
 	{
 		if (stone[x][j] == Stone::None)
@@ -221,7 +223,7 @@ bool Reversi::isSetCheck(int x, int y, Stone stoneColor)
 		}
 		count++;
 	}
-	//‰E
+	//â€°E
 	for (int j = y + 1; j <sizeof(stone[0]) / sizeof(stone[0][0]); j++)
 	{
 		if (stone[x][j] == Stone::None)
@@ -246,7 +248,7 @@ bool Reversi::isSetCheck(int x, int y, Stone stoneColor)
 		}
 		count++;
 	}
-	//¶‰º
+	//ÂÂ¶â€°Âº
 	j = y - 1;
 	for (int i = x + 1; i <sizeof(stone) / sizeof(stone[0]); i++)
 	{
@@ -273,7 +275,7 @@ bool Reversi::isSetCheck(int x, int y, Stone stoneColor)
 		count++;
 		j--;
 	}
-	//‰º
+	//â€°Âº
 	for (int i = x + 1; i <sizeof(stone) / sizeof(stone[0]); i++)
 	{
 		if (stone[i][y] == Stone::None)
@@ -298,7 +300,7 @@ bool Reversi::isSetCheck(int x, int y, Stone stoneColor)
 		}
 		count++;
 	}
-	//‰E‰º
+	//â€°Eâ€°Âº
 	j = y + 1;
 	for (int i = x + 1; i <sizeof(stone) / sizeof(stone[0]); i++)
 	{
@@ -339,8 +341,9 @@ void Reversi::update(int x, int y, Stone stoneColor)
 	int count = 0;
 	int i = 0, j = 0;
 
-	//¶ã
+	//ÂÂ¶ÂÃ£
 	j = y - 1;
+	//ã“ã“ã‚‚
 	for (int i = x - 1; i >= 0; i--)
 	{
 		if (j < 0 || stone[i][j] == Stone::None)
@@ -364,8 +367,9 @@ void Reversi::update(int x, int y, Stone stoneColor)
 	{
 		changeStone(x - 1 - i, y - 1 - i, stoneColor);
 	}
+	//ã“ã‚Œä»¥é™ä¼¼ãŸã‚ˆã†ãªã“ã¨ã‚’ã—ã¦ã„ã‚‹ã®ã§ã€é–¢æ•°åŒ–ã—ãŸã»ã†ãŒã‚ˆã„
 	count = 0;
-	//ã
+	//ÂÃ£
 	for (int i = x - 1; i >= 0; i--)
 	{
 		if (stone[i][y] == Stone::None)
@@ -389,7 +393,7 @@ void Reversi::update(int x, int y, Stone stoneColor)
 		changeStone(x - 1 - i, y, stoneColor);
 	}
 	count = 0;
-	//‰Eã
+	//â€°EÂÃ£
 	j = y + 1;
 	for (int i = x - 1; i >= 0; i--)
 	{
@@ -415,7 +419,7 @@ void Reversi::update(int x, int y, Stone stoneColor)
 		changeStone(x - 1 - i, y + 1 + i, stoneColor);
 	}
 	count = 0;
-	//¶
+	//ÂÂ¶
 	for (int j = y - 1; j >= 0; j--)
 	{
 		if (stone[x][j] == Stone::None)
@@ -439,7 +443,7 @@ void Reversi::update(int x, int y, Stone stoneColor)
 		changeStone(x, y - 1 - j, stoneColor);
 	}
 	count = 0;
-	//‰E
+	//â€°E
 	for (int j = y + 1; j <sizeof(stone[0]) / sizeof(stone[0][0]); j++)
 	{
 		if (stone[x][j] == Stone::None)
@@ -463,7 +467,7 @@ void Reversi::update(int x, int y, Stone stoneColor)
 		changeStone(x, y + 1 + j, stoneColor);
 	}
 	count = 0;
-	//¶‰º
+	//ÂÂ¶â€°Âº
 	j = y - 1;
 	for (int i = x + 1; i <sizeof(stone) / sizeof(stone[0]); i++)
 	{
@@ -489,7 +493,7 @@ void Reversi::update(int x, int y, Stone stoneColor)
 		changeStone(x + 1 + i, y - 1 - i, stoneColor);
 	}
 	count = 0;
-	//‰º
+	//â€°Âº
 	for (int i = x + 1; i <sizeof(stone) / sizeof(stone[0]); i++)
 	{
 		if (stone[i][y] == Stone::None)
@@ -513,7 +517,7 @@ void Reversi::update(int x, int y, Stone stoneColor)
 		changeStone(x + 1 + i, y, stoneColor);
 	}
 	count = 0;
-	//‰E‰º
+	//â€°Eâ€°Âº
 	j = y + 1;
 	for (int i = x + 1; i <sizeof(stone) / sizeof(stone[0]); i++)
 	{
